@@ -8,6 +8,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 3000;
 
+const { title } = require('./package.json');
+
 // global paths
 const PATHS = {
   src: path.resolve(__dirname, 'src'),
@@ -51,13 +53,15 @@ function config(env) {
     }),
 
     // create css bundle
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin({ filename: '[name]-[hash:8].css' }),
 
     // create index.html
     new HtmlWebpackPlugin({
+      title: title,
       template: `${PATHS.src}/index.ejs`,
       inject: true,
       production: isProd,
+      hash: false,
       minify: isProd && {
         removeComments: true,
         collapseWhitespace: true,

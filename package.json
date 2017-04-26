@@ -2,6 +2,7 @@
   "name": "reactjs-basics",
   "version": "1.0.0",
   "description": "The purpose of this project is to show how ReactJS works.",
+  "title": "ReactJS Basics",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
