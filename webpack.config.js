@@ -55,7 +55,7 @@ function config(env) {
 
     // create index.html
     new HtmlWebpackPlugin({
-      template: `${PATHS.src}/app/index.ejs`,
+      template: `${PATHS.src}/index.ejs`,
       inject: true,
       production: isProd,
       minify: isProd && {
@@ -147,10 +147,10 @@ function config(env) {
 
   return {
     entry: {
-      app: `${PATHS.src}/app/index.js`,
+      bundle: `${PATHS.src}/index.js`,
     },
     output: {
-      path: `${PATHS.src}/app`,
+      path: PATHS.src,
       filename: '[name]-[hash:8].js',
       publicPath: '/',
     },
