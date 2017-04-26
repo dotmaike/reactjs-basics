@@ -152,7 +152,7 @@ function config(env) {
     output: {
       path: `${PATHS.src}/app`,
       filename: '[name]-[hash:8].js',
-      publicPath: '/app/',
+      publicPath: '/',
     },
     module: {
       rules: [
