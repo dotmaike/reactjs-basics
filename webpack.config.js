@@ -154,7 +154,7 @@ function config(env) {
       bundle: `${PATHS.src}/index.js`,
     },
     output: {
-      path: PATHS.src,
+      path: PATHS.dist,
       filename: '[name]-[hash:8].js',
       publicPath: '/',
     },
