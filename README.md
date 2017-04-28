@@ -8,6 +8,12 @@ The purpose of this project is to show how ReactJS works.
 
 [ReactJS Folder Structure](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
 
+[ReactJS Best Practices](https://blog.risingstack.com/react-js-best-practices-for-2016/)
+
+[ReactJS Basics](https://www.youtube.com/playlist?list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS)
+
+[ReactJS + Redux Basics](https://www.youtube.com/playlist?list=PL55RiY5tL51rrC3sh8qLiYHqUV3twEYU_)
+
 ### Dependencies
 
 - [x] [react: 15.x](https://www.npmjs.com/package/react)
