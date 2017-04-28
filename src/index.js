@@ -20,7 +20,7 @@ render(
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/inbox" component={Inbox} />
-      <Route path="/inbox/messages/:id" component={Message} />
+      <Route path="/inbox/messages/:message" component={Message} />
     </div>
   </Router>,
   document.getElementById('root')

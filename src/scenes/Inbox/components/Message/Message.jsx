@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Message = ({ match }) => <h3>Message {match.params.id}</h3>;
+const Message = ({ match }) => <h3>Message {match.params.message}</h3>;
 
 Message.defaultProps = {};
 
