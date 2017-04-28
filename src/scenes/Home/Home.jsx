@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Home = () => <h1>Home</h1>;
+const Home = () => <div><h1>Home</h1></div>;
 
 Home.defaultProps = {};
 
