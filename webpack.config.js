@@ -3,6 +3,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // seeting up host and port for webpack-dev-server
 const host = process.env.HOST || 'localhost';
@@ -12,8 +13,9 @@ const { title } = require('./package.json');
 
 // global paths
 const PATHS = {
-  src: path.resolve(__dirname, 'src'),
-  dist: path.resolve(__dirname, 'dist')
+  src: path.resolve(__dirname, './src'),
+  dist: path.resolve(__dirname, './dist'),
+  root: path.resolve(__dirname, './')
 };
 
 // configuration for webpack-dev-server
@@ -35,7 +37,11 @@ function config(env) {
   const nodeEnv = env && env.prod ? 'production' : 'development';
   const isProd = nodeEnv === 'production';
 
-  let cssLoader = [];
+  // create css bundle
+  const extractSass = new ExtractTextPlugin({
+    filename: '[name]-[hash:8].css',
+    disable: !isProd
+  });
 
   const plugins = [
     // creates a separate file separating common modules from bundles
@@ -53,7 +59,7 @@ function config(env) {
     }),
 
     // create css bundle
-    new ExtractTextPlugin({ filename: '[name]-[hash:8].css' }),
+    extractSass,
 
     // create index.html
     new HtmlWebpackPlugin({
@@ -92,31 +98,13 @@ function config(env) {
           evaluate: true,
           if_return: true,
           join_vars: true
-        }
-      })
-    );
-
-    cssLoader = ExtractTextPlugin.extract({
-      fallback: 'style-loader',
-      use: [
-        {
-          loader: 'css-loader',
-          options: {
-            module: true, // css-loader 0.14.5 compatible
-            modules: true,
-            localIdentName: '[hash:base64:5]'
-          }
         },
-        {
-          loader: 'sass-loader',
-          options: {
-            outputStyle: 'collapsed',
-            sourceMap: true,
-            includePaths: [PATHS.src]
-          }
+        output: {
+          comments: false
         }
-      ]
-    });
+      }),
+      new CleanWebpackPlugin(['dist'], { root: PATHS.root })
+    );
   } else {
     plugins.push(
       // make hot reloading work
@@ -126,30 +114,10 @@ function config(env) {
       // don't spit out any errors in compiled assets
       new webpack.NoEmitOnErrorsPlugin()
     );
-
-    cssLoader = [
-      {
-        loader: 'style-loader'
-      },
-      {
-        loader: 'css-loader',
-        options: {
-          module: true,
-          localIdentName: '[path][name]-[local]'
-        }
-      },
-      {
-        loader: 'sass-loader',
-        options: {
-          outputStyle: 'expanded',
-          sourceMap: false,
-          includePaths: [PATHS.src]
-        }
-      }
-    ];
   }
 
   return {
+    devtool: isProd ? 'eval' : 'inline-source-map',
     entry: {
       bundle: `${PATHS.src}/index.js`
     },
@@ -173,7 +141,23 @@ function config(env) {
         {
           test: /\.scss$/,
           exclude: /node_modules/,
-          use: cssLoader
+          use: extractSass.extract({
+            use: [
+              {
+                loader: 'css-loader'
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  outputStyle: isProd ? 'collapsed' : 'expanded',
+                  sourceMap: isProd,
+                  includePaths: [PATHS.src]
+                }
+              }
+            ],
+            // use style-loader in development
+            fallback: 'style-loader'
+          })
         },
         {
           test: /\.(js|jsx)$/,
@@ -183,7 +167,7 @@ function config(env) {
       ]
     },
     resolve: {
-      extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx'],
+      extensions: ['.js', '.jsx'],
       modules: [path.resolve(__dirname, 'node_modules'), PATHS.src]
     },
     plugins,
