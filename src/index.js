@@ -5,11 +5,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import './styles/main.scss';
 
-import NavBar from './components/NavBar';
+import { NavBar } from './components';
 import Home from './scenes/Home';
 import About from './scenes/About';
 import Inbox from './scenes/Inbox';
-import Message from './scenes/Inbox/components/Message';
+import { Message } from './scenes/Inbox/components';
 
 injectTapEventPlugin();
 
