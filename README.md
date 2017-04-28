@@ -2,7 +2,7 @@
 
 The purpose of this project is to show how ReactJS works.
 
-![React, Redux, Router, Webpack, Sass](https://cloud.githubusercontent.com/assets/733074/25338311/193a1a40-28ff-11e7-8f22-9a5d9dac7b84.png)
+![ES6, React, Redux, Router, Webpack, Sass](https://cloud.githubusercontent.com/assets/733074/25338311/193a1a40-28ff-11e7-8f22-9a5d9dac7b84.png)
 
 ## Documentation
 
@@ -13,6 +13,10 @@ The purpose of this project is to show how ReactJS works.
 [ReactJS Basics](https://www.youtube.com/playlist?list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS)
 
 [ReactJS + Redux Basics](https://www.youtube.com/playlist?list=PL55RiY5tL51rrC3sh8qLiYHqUV3twEYU_)
+
+[Leveling Up with React: Redux](https://css-tricks.com/learning-react-redux/)
+
+[Testing JavaScript Applications Workshop (at PayPal)](https://www.youtube.com/watch?v=DdqiXcYDv-8)
 
 ### Dependencies
 
