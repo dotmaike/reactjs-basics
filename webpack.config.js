@@ -13,7 +13,7 @@ const { title } = require('./package.json');
 // global paths
 const PATHS = {
   src: path.resolve(__dirname, 'src'),
-  dist: path.resolve(__dirname, 'dist'),
+  dist: path.resolve(__dirname, 'dist')
 };
 
 // configuration for webpack-dev-server
@@ -27,8 +27,8 @@ const stats = {
   version: false,
   warnings: true,
   colors: {
-    green: '\u001b[32m',
-  },
+    green: '\u001b[32m'
+  }
 };
 
 function config(env) {
@@ -42,14 +42,14 @@ function config(env) {
     new webpack.optimize.CommonsChunkPlugin({
       async: true,
       children: true,
-      minChunks: 2,
+      minChunks: 2
     }),
 
     // setting production environment will strip out
     // some of the development code from the app
     // and libraries
     new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
+      'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
     }),
 
     // create css bundle
@@ -72,9 +72,9 @@ function config(env) {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
-      },
-    }),
+        minifyURLs: true
+      }
+    })
   ];
 
   if (isProd) {
@@ -91,8 +91,8 @@ function config(env) {
           dead_code: true,
           evaluate: true,
           if_return: true,
-          join_vars: true,
-        },
+          join_vars: true
+        }
       })
     );
 
@@ -104,18 +104,18 @@ function config(env) {
           options: {
             module: true, // css-loader 0.14.5 compatible
             modules: true,
-            localIdentName: '[hash:base64:5]',
-          },
+            localIdentName: '[hash:base64:5]'
+          }
         },
         {
           loader: 'sass-loader',
           options: {
             outputStyle: 'collapsed',
             sourceMap: true,
-            includePaths: [PATHS.src],
-          },
-        },
-      ],
+            includePaths: [PATHS.src]
+          }
+        }
+      ]
     });
   } else {
     plugins.push(
@@ -129,34 +129,34 @@ function config(env) {
 
     cssLoader = [
       {
-        loader: 'style-loader',
+        loader: 'style-loader'
       },
       {
         loader: 'css-loader',
         options: {
           module: true,
-          localIdentName: '[path][name]-[local]',
-        },
+          localIdentName: '[path][name]-[local]'
+        }
       },
       {
         loader: 'sass-loader',
         options: {
           outputStyle: 'expanded',
           sourceMap: false,
-          includePaths: [PATHS.src],
-        },
-      },
+          includePaths: [PATHS.src]
+        }
+      }
     ];
   }
 
   return {
     entry: {
-      bundle: `${PATHS.src}/index.js`,
+      bundle: `${PATHS.src}/index.js`
     },
     output: {
       path: PATHS.dist,
       filename: '[name]-[hash:8].js',
-      publicPath: '/',
+      publicPath: '/'
     },
     module: {
       rules: [
@@ -166,31 +166,31 @@ function config(env) {
           use: {
             loader: 'file-loader',
             options: {
-              name: 'static/[name]-[hash:8].[ext]',
-            },
-          },
+              name: 'static/[name]-[hash:8].[ext]'
+            }
+          }
         },
         {
           test: /\.scss$/,
           exclude: /node_modules/,
-          use: cssLoader,
+          use: cssLoader
         },
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
-        },
-      ],
+          use: ['babel-loader']
+        }
+      ]
     },
     resolve: {
       extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx'],
-      modules: [path.resolve(__dirname, 'node_modules'), PATHS.src],
+      modules: [path.resolve(__dirname, 'node_modules'), PATHS.src]
     },
     plugins,
     performance: isProd && {
       maxAssetSize: 300000,
       maxEntrypointSize: 300000,
-      hints: 'warning',
+      hints: 'warning'
     },
     devServer: {
       historyApiFallback: true,
@@ -198,8 +198,8 @@ function config(env) {
       host: host,
       hot: !isProd,
       compress: isProd,
-      stats: stats,
-    },
+      stats: stats
+    }
   };
 }
 
