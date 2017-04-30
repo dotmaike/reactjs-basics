@@ -3,13 +3,26 @@ import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
-const NavBar = ({ match }) => (
-  <nav role="navigation" className="collapse navbar-collapse">
-    <ul className="nav navbar-nav">
-      <li role="presentation" className={match ? 'active' : ''}><Link to="/">Home</Link></li>
-      <li role="presentation" className={match ? 'active' : ''}><Link to="/about">About</Link></li>
-      <li role="presentation" className={match ? 'active' : ''}><Link to="/inbox">Inbox</Link></li>
-    </ul>
+const NavBar = () => (
+  <nav role="navigation" className="navbar navbar-static-top">
+    <div className="container">
+      <div className="navbar-header">
+        <a href="/" className="navbar-brand">Brand</a>
+      </div>
+      <div className="collapse navbar-collapse">
+        <ul className="nav navbar-nav">
+          <li role="presentation">
+            <Link to="/">Home</Link>
+          </li>
+          <li role="presentation">
+            <Link to="/about">About</Link>
+          </li>
+          <li role="presentation">
+            <Link to="/inbox">Inbox</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 );
 

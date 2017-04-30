@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ButtonLink = ({ to, label, ...rest }) => <Link to={to} {...rest} className="btn btn-primary">{label}</Link>;
+const ButtonLink = ({ to, label, ...rest }) => (
+  <Link to={to} {...rest} className={rest.buttonType ? `btn ${rest.buttonType}` : 'btn btn-default'}>
+    {label}
+  </Link>
+);
 
 ButtonLink.defaultProps = {
   to: '',

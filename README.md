@@ -6,6 +6,8 @@ The purpose of this project is to show how ReactJS works.
 
 ## Documentation
 
+[ECMAScript 6 Features](https://github.com/lukehoban/es6features)
+
 [ReactJS Folder Structure](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
 
 [ReactJS Best Practices](https://blog.risingstack.com/react-js-best-practices-for-2016/)
@@ -16,7 +18,7 @@ The purpose of this project is to show how ReactJS works.
 
 [Leveling Up with React: Redux](https://css-tricks.com/learning-react-redux/)
 
-[Testing JavaScript Applications Workshop (at PayPal)](https://www.youtube.com/watch?v=DdqiXcYDv-8)
+[Testing JavaScript)](https://www.youtube.com/watch?v=DdqiXcYDv-8)
 
 ### Dependencies
 

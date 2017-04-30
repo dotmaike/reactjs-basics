@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ButtonLink from './../../components/ButtonLink';
+import Button from './../../components/Button';
+import Message from './components/Message';
 
 class Inbox extends Component {
   constructor(props) {
@@ -18,7 +19,6 @@ class Inbox extends Component {
     return (
       <div>
         <h3>Inbox</h3>
-        {this.props.children || 'Welcome to your Inbox'}
         <hr />
         <form>
           <div className="form-group">
@@ -31,7 +31,7 @@ class Inbox extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <ButtonLink to={`/inbox/messages/${this.state.message}`} label="Send Message" />
+          <Message message={this.state.message} />
         </form>
       </div>
     );
