@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Home = () => (
+const Users = () => (
   <div className="container">
-    <h3>Home</h3>
+    <h3>Users</h3>
     <hr />
     <div>Welcome!</div>
   </div>
 );
 
-Home.defaultProps = {};
+Users.defaultProps = {};
 
-Home.propTypes = {};
+Users.propTypes = {};
 
-export default Home;
+export default Users;
