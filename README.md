@@ -22,9 +22,13 @@ The purpose of this project is to show how ReactJS works.
 
 ### Dependencies
 
+- [x] [prop-types: 15.5.8](https://www.npmjs.com/package/prop-types)
 - [x] [react: 15.x](https://www.npmjs.com/package/react)
 - [x] [react-dom: 15.x](https://www.npmjs.com/package/react-dom)
 - [x] [react-hot-loader: next](https://www.npmjs.com/package/react-hot-loader)
+- [x] [react-redux: 5.0.4](https://www.npmjs.com/package/react-redux)
+- [x] [react-router-dom: 4.1.1](https://www.npmjs.com/package/react-router-dom)
+- [x] [redux: 3.6.0](https://www.npmjs.com/package/redux)
 
 ### Dev Dependencies
 
