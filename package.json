@@ -44,7 +44,8 @@
     "react-hot-loader": "next",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -73,7 +74,6 @@
     "jest-cli": "^19.0.2",
     "node-sass": "^4.5.2",
     "prettier": "^1.2.2",
-    "redux-logger": "^3.0.1",
     "regenerator-runtime": "^0.10.4",
     "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.3",
