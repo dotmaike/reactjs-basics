@@ -3,18 +3,17 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import todoApp from './data/reducers';
+import reducer from './data/reducer';
 
 import './styles/main.scss';
 
 import { NavBar } from './components';
 import Home from './scenes/Home';
 import About from './scenes/About';
-import Inbox from './scenes/Inbox';
-import { Message } from './scenes/Inbox/components';
-import Users from './scenes/Users';
+import CounterReact from './scenes/CounterReact';
+import CounterRedux from './scenes/CounterRedux';
 
-const store = createStore(todoApp);
+const store = createStore(reducer);
 
 render(
   <Provider store={store}>
@@ -23,9 +22,8 @@ render(
         <NavBar />
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/inbox" component={Inbox} />
-        <Route path="/inbox/messages/:message" component={Message} />
-        <Route path="/users" component={Users} />
+        <Route path="/counter-react" component={CounterReact} />
+        <Route path="/counter-redux" component={CounterRedux} />
       </div>
     </Router>
   </Provider>,

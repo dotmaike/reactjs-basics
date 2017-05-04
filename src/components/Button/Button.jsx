@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = props => (
-  <button type="button" className={props.buttonType ? `btn ${props.buttonType}` : 'btn btn-default'}>
-    {props.label}
+const Button = ({ buttonType, label, ...rest }) => (
+  <button type="button" className={buttonType ? `btn ${buttonType}` : 'btn btn-default'} {...rest}>
+    {label}
   </button>
 );
 

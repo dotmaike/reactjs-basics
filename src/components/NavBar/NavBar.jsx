@@ -18,10 +18,10 @@ const NavBar = () => (
             <Link to="/about">About</Link>
           </li>
           <li role="presentation">
-            <Link to="/inbox">Inbox</Link>
+            <Link to="/counter-react">Counter React</Link>
           </li>
           <li role="presentation">
-            <Link to="/users">Users</Link>
+            <Link to="/counter-redux">Counter Redux</Link>
           </li>
         </ul>
       </div>
