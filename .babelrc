@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ],
+  "presets": [
+    ["env", {
+      "targets": {
+        "chrome": 57,
+        "browsers": ["last 2 versions", "safari 7"]
+      },
+      "modules": false,
+      "loose": true
+    }],
+    "react"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "test": {
+      "presets": ["env", "react"]
+    }
+  }
+}

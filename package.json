@@ -1,0 +1,89 @@
+{
+  "name": "reactjs-basics",
+  "version": "1.0.0",
+  "description": "The purpose of this project is to show how ReactJS works.",
+  "title": "ReactJS Basics",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack-dev-server",
+    "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
+    "build": "cross-env NODE_ENV=production webpack --env.prod=true"
+  },
+  "jest": {
+    "automock": false,
+    "browser": true,
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "./node_modules/webpack-babel-jest"
+    },
+    "testEnvironment": "jsdom",
+    "testRegex": ".*.test.js",
+    "verbose": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotmaike/reactjs-basics.git"
+  },
+  "author": "Miguel Murillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dotmaike/reactjs-basics/issues"
+  },
+  "homepage": "https://github.com/dotmaike/reactjs-basics#readme",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.5.8",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "next",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^4.0.0",
+    "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-prettier": "^1.7.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "jest-cli": "^19.0.2",
+    "node-sass": "^4.5.2",
+    "prettier": "^1.2.2",
+    "redux-logger": "^3.0.1",
+    "regenerator-runtime": "^0.10.4",
+    "sass-lint": "^1.10.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "uglify-js": "^2.8.22",
+    "uglifyjs-webpack-plugin": "^0.4.3",
+    "webpack": "^2.4.1",
+    "webpack-babel-jest": "^1.0.4",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
