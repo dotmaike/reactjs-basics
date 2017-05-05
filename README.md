@@ -63,6 +63,7 @@ DO NOTE: You need [NodeJS](https://nodejs.org/en/) in order to run this project.
 
 ## Yarn Scripts
 
+- `npm install yarn` - install yarn
 - `yarn install` - install dependencies
 - `yarn run dev` - run development server
 - `yarn run prod` - run production server
