@@ -20,7 +20,7 @@ The purpose of this project is to show how ReactJS works.
 
 [Leveling Up with React: Redux](https://css-tricks.com/learning-react-redux/)
 
-[Testing JavaScript)](https://www.youtube.com/watch?v=DdqiXcYDv-8)
+[Testing JavaScript](https://www.youtube.com/watch?v=DdqiXcYDv-8)
 
 [JSX TypeScript](https://www.typescriptlang.org/docs/handbook/jsx.html)
 
