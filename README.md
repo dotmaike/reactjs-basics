@@ -1,6 +1,7 @@
 # reactjs-basics
 
 The purpose of this project is to show how ReactJS works.
+
 DO NOTE: You need [NodeJS](https://nodejs.org/en/) in order to run this project.
 
 ![ES6, React, Redux, Router, Webpack, Sass](https://cloud.githubusercontent.com/assets/733074/25338311/193a1a40-28ff-11e7-8f22-9a5d9dac7b84.png)
