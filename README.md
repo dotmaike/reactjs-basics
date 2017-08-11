@@ -63,14 +63,6 @@ DO NOTE: You need [NodeJS](https://nodejs.org/en/) in order to run this project.
 - [webpack: 2.4.x](https://www.npmjs.com/package/webpack)
 - [webpack-dev-server: 2.4.x](https://www.npmjs.com/package/webpack-dev-server)
 
-## Yarn Scripts
-
-- `npm install yarn` - install yarn
-- `yarn install` - install dependencies
-- `yarn run dev` - run development server
-- `yarn run prod` - run production server
-- `yarn run build` - build app for deployment
-
 ## NPM Scripts
 
 - `npm install` - install dependencies
