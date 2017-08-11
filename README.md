@@ -22,7 +22,7 @@ The purpose of this project is to show how ReactJS works.
 
 [Testing JavaScript](https://www.youtube.com/watch?v=DdqiXcYDv-8)
 
-[JSX TypeScript](https://www.typescriptlang.org/docs/handbook/jsx.html)
+[Optional: JSX TypeScript](https://www.typescriptlang.org/docs/handbook/jsx.html)
 
 ### Dependencies
 
